@@ -45,8 +45,12 @@ const myapp = new Vue({
             if(this.activimg > this.slides.length){
                 this.activimg = 0;
             }
+        },
+
+        //funzione cambio d' immagine
+        cambioimg(activimg){
+            this.activimg = activimg;
         }
     }
 });
 
-console.log(slides);
