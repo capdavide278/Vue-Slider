@@ -2,6 +2,7 @@ const myapp = new Vue({
     el : '#app',
     data : {
         activimg : 0,
+        timer : 0,
         slides : [
             {
                 image: 'img/01.jpg',
@@ -50,6 +51,14 @@ const myapp = new Vue({
         //funzione cambio d' immagine
         cambioimg(activimg){
             this.activimg = activimg;
+        },
+
+        //autoplay
+        autoPlay() {
+            const play = this.activimg;
+            this.timer = setInterval(function () {
+                play.nextimg();
+            }, 3000);
         }
     }
 });
